@@ -5,6 +5,7 @@ option go_package = "github.com/RafaelRochaS/above-account-service/";
 package above.account_service;
 
 service User {
+  rpc Healthcheck (HealthcheckRequest) returns (HealthcheckReply) {}
   rpc CreateUser (UserCreateRequest) returns (UserCreateReply) {}
 }
 
@@ -17,5 +18,11 @@ message UserCreateRequest {
 }
 
 message UserCreateReply {
+  string status = 1;
+}
+
+message HealthcheckRequest {}
+
+message HealthcheckReply {
   string status = 1;
 }
