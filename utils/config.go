@@ -15,7 +15,7 @@ var TRUSTED_PROXIES string
 func LoadEnvs() {
 	err := godotenv.Load()
 	if err != nil {
-		log.Fatal("Error loading .env file")
+		log.Print("No env file found, reverting to defaults")
 	}
 
 	HOST = os.Getenv("HOST")

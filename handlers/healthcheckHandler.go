@@ -12,4 +12,8 @@ func HandleHealthcheck(rg *gin.RouterGroup) {
 	healthcheck.GET("/", func(ctx *gin.Context) {
 		ctx.JSON(http.StatusOK, "ok")
 	})
+
+	healthcheck.POST("/", func(ctx *gin.Context) {
+		ctx.JSON(http.StatusOK, "ok")
+	})
 }
